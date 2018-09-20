@@ -1,10 +1,12 @@
 pipeline {
     agent any
     stages {
+        stage('test') {
+            sh 'echo "Test"'
+        }
         stage('build') {
             steps {
-                sh 'echo "Hello World"'
-                sh 'echo $PATH'
+                sh 'echo "Build"'
                 sh 'mvn --version'
             }
         }
